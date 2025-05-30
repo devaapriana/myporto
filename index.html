@@ -36,37 +36,101 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <!-- RESPONSIVE CSS -->
     <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <style>
+        .mainSwiper {
+        width: 100%;
+        height: 100vh;
+        background-color: #111;
+        }
+
+        .mainSwiper .swiper-pagination {
+            bottom: 20px;
+        }
+
+        .swiper-slide img {
+        display: block;
+        width: 100%;
+        }
+
+        .tech-stack-part {
+        margin-top: 2rem;
+    }
+
+      .tech-stack-part {
+        margin-top: 2rem;
+    }
+
+    .tech-stack-part h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 1.5rem;
+    }
+
+    .tech-logo {
+        border-radius: 10px;
+        background-color: #121214;
+        padding: 10px;
+    }
+
+    .tech-stack-logos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        align-items: center;
+    }
+
+    .tech-logo img {
+        width: 40px;
+        height: 40px;
+        transition: all 0.3s ease;
+        filter: grayscale(20%);
+    }
+
+    .tech-logo img:hover {
+        transform: scale(1.1);
+        filter: grayscale(0%);
+    }
+
+    .list-item{
+        list-style: disc !important;
+    }
+
+    li::marker {
+        color: orange !important;
+    }
+
+    ul{
+        padding-inline-start: 1em
+    }
+
+    .project-title {
+        color: rgb(255, 181, 44) !important;
+    }
+
+    </style>
+
+    <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="jquery.min.js"></script>
+    <script src="owlcarousel/owl.carousel.min.js"></script>
+
 </head>
 
-
 <body>
-    <!-- START PRELOADER AREA-->
-    <!-- <div class="preloader">
-        <svg viewbox="0 0 1000 1000" preserveaspectratio="none">
-            <path id="preloaderSvg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
-        </svg>
-        <div class="preloader-heading">
-            <div class="load-text">
-                <span>L</span>
-                <span>o</span>
-                <span>a</span>
-                <span>d</span>
-                <span>i</span>
-                <span>n</span>
-                <span>g</span>
-            </div>
-        </div>
-    </div> -->
-    <!-- END PRELOADER AREA -->
+   
     <!-- START MENU DESIGN AREA -->
     <header class="main-header">
         <div class="header-upper">
@@ -88,9 +152,6 @@
                             <div class="navbar-header">
                                 <div class="mobile-logo">
                                     <a href="index.html">
-                                        <!-- <img src="assets/images/logo.png" alt="Logo" title="Logo" /> -->
-                                        <!-- <div id="myAnimation" style="width: 100px; height: 100px;"></div> -->
-
                                     </a>
                                 </div>
                                 <!-- Toggle Button -->
@@ -100,12 +161,7 @@
                                     <span class="icon-bar"></span>
                                 </button>
                             </div>
-                            <div class="navbar-collapse collapse">
-                                <ul class="navigation onepage clearfix">
-                                    <!-- <li><a class="nav-link-click" href="index.html">Home</a></li> -->
-                                    <!-- <li><a class="nav-link-click" href="contact.html">Contact</a></li> -->
-                                </ul>
-                            </div>
+                        
                         </nav>
                         <!-- / END NAV DESIGN AREA -->
                     </div>
@@ -125,8 +181,7 @@
                 <div class="col-lg-4">
                     <div class="about-image-part wow fadeInUp delay-0-3s">
                         <img src="assets/images/iam.jpg" alt="About Me" style="border-radius: 10%; background-position: top; background-repeat: no-repeat; background-size: cover;" />
-                        <br>
-                        <h2>Deva Apriana</h2>
+                        <h2 class="mt-4">Deva Apriana</h2>
                         <p>Full Stack Developer | Backend Developer | Laravel Developer.</p>
                         <div class="about-social text-center">
                             <ul>
@@ -140,10 +195,10 @@
                 <!-- / END ABOUT IMAGE DESIGN AREA -->
                 <!-- START ABOUT TEXT DESIGN AREA -->
                 <div class="col-lg-8 align-middle my-auto items-center" style="vertical-align: middle;">
-                    <div class="about-content-part wow fadeInUp delay-0-2s">
+                    <div class="about-content-part wow fadeInUp delay-0-2s" style="margin-bottom: 20px;">
                         <p>Hello There!</p>
                         <h2>
-                            I'm Deva Apriana, a web developer transforming ideas into interactive and efficient digital experiences.
+                            I'm web developer transforming ideas into interactive and efficient digital experiences.
                         </h2>
                         <div class="adress-field">
                             <ul>
@@ -151,143 +206,536 @@
                             </ul>
                         </div>
                         <div class="hero-btns">
-                            <a target="_blank" href="https://drive.google.com/file/d/1XSPoiOOMlQhqfx1_vuYaLky5EiKDkveQ/view?usp=sharing" class="theme-btn">Download CV <i class="ri-download-line"></i></a>
+                            <a target="_blank" href="https://docs.google.com/document/d/1yvCG4oAtPlcjTJMwWoRuxJRlKIXpXu2k/edit?usp=sharing&ouid=100146912122441046504&rtpof=true&sd=true" class="theme-btn">Download CV <i class="ri-download-line"></i></a>
                         </div>
                     </div>
-                    <!-- <div class="about-content-part-bottom wow fadeInUp delay-0-2s">
-                        <h2>Company I Worked With</h2>
-                        <div class="company-list">
-                            <div class="scroller" data-direction="left" data-speed="slow">
-                                <div class="scroller__inner">
-                                    <img src="assets/images/client-logos/partner1.png" alt="" />
-                                    <img src="assets/images/client-logos/partner2.png" alt="" />
-                                    <img src="assets/images/client-logos/partner3.png" alt="" />
-                                    <img src="assets/images/client-logos/partner4.png" alt="" />
-                                    <img src="assets/images/client-logos/partner5.png" alt="" />
-                                    <img src="assets/images/client-logos/partner1.png" alt="" />
-                                </div>
+
+                    <!-- START TECH STACK SECTION -->
+                    <div class="tech-stack-part wow fadeInUp delay-0-4s mt-5" style="margin-top: 20px;">
+                        <!-- <h3 class="mb-4">Tech Stack</h3> -->
+                        <div class="tech-stack-logos">
+                            <div class="tech-logo">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel" />
+                            </div>
+                            <div class="tech-logo">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React JS" />
+                            </div>
+                            <div class="tech-logo">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular JS" />
+                            </div>
+                            <div class="tech-logo">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" alt="jQuery" />
+                            </div>
+                            <div class="tech-logo">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/livewire/livewire-original.svg" alt="Livewire" />
+                            </div>
+                            <div class="tech-logo">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+                            </div>
+                            <div class="tech-logo">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwindcss" />
+                            </div>
+                            <div class="tech-logo">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" />
+                            </div>
+                            <div class="tech-logo">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="Mysql" />
+                            </div>
+                             <div class="tech-logo">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman" />
                             </div>
                         </div>
-                    </div> -->
+                    </div>
+                    <!-- / END TECH STACK SECTION -->
                 </div>
                 <!-- / END ABOUT TEXT DESIGN AREA -->
+
             </div>
         </div>
     </section>
     <!-- / END ABOUT DESIGN AREA -->
     <!-- START PORTFOLIO DESIGN AREA -->
-    <section id="portfolio" class="projects-area">
-        <div class="container">
-            <div class="container-inner">
-                <div class="row">
-                    <div class="col-xl-12 col-lg-12">
-                        <div class="section-title text-center wow fadeInUp delay-0-2s">
-                            <h2>Works & Projects</h2>
-                            <p style="padding: 0px 0px;">Explore my web development projects, carefully built with dedication and expertise, each one showcasing the precision and care invested in every line of code.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- <ul class="project-filter filter-btns-one justify-content-left pb-15 wow fadeInUp delay-0-2s">
-                    <li data-filter="*" class="current">Show All</li>
-                </ul> -->
-                
-                <div class="row project-masonry-active">
-                    <!-- START SINGLE PORTFOLIO DESIGN AREA -->
-                    <!-- START PORTFOLIO DESIGN AREA -->
-                    <!-- START SINGLE PORTFOLIO DESIGN AREA -->
-                    <div class="col-lg-4 col-md-6 item design marketing graphics">
-                        <div class="project-item style-two wow fadeInUp delay-0-4s" style="height: 280px;">
-                            <div class="project-image" style="height: 75%;">
-                                <img src="assets/images/projects/crm.png" alt="Project" style="background-position: center; height: 100%; width: 100%; object-fit: fill;">
-                                <p class="details-btn popup-youtube">
-                                    Cazh CRM merupakan website untuk mengelola data pelanggan, sales dan dokumen administrasi PT. Cazh 
-                                </p>
-
-                            </div>
-                            <div class="project-content">
-                                <h3>Cazh CRM</h3>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 item branding game" >
-                        <div class="project-item style-two wow fadeInUp delay-0-3s" style="height: 280px;">
-                            <div class="project-image" style="height: 75%;">
-                                <img src="assets/images/projects/blanjaloka.jpg" alt="Project" style="background-position: center; height: 100%; width: 100%; object-fit: fill;">
-                                <p class="details-btn popup-youtube">
-                                    Blanjaloka Akselelator merupakan website untuk memajukan UMKM dengan program inkubasi melalui media pembelajaran. 
-                                </p>
-                            </div>
-                            <div class="project-content">
-                                <h3>Blanjaloka Akselalator</h3>
-                            </div>
-                        </div>
-                    </div>
-                    
-                  
-                    <!-- START SINGLE PORTFOLIO DESIGN AREA -->
-                    <div class="col-lg-4 col-md-6 item design marketing graphics">
-                        <div class="project-item style-two wow fadeInUp delay-0-4s" style="height: 280px;">
-                            <div class="project-image" style="height: 75%;">
-                                <img src="assets/images/projects/ocean.png" alt="Project" style="background-position: center; height: 100%; width: 100%; object-fit: fill;">
-                                <p class="details-btn popup-youtube">
-                                    Ocean merupakan website yang digunakan untuk pencarian kandidat peserta dan program magang. 
-                                </p>
-                            </div>
-                            <div class="project-content">
-                                <h3>Ocean Platform Magang</h3>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- START SINGLE PORTFOLIO DESIGN AREA -->
-                    <div class="col-lg-4 col-md-6 item design marketing graphics">
-                        <div class="project-item style-two wow fadeInUp delay-0-4s" style="height: 280px;">
-                            <div class="project-image" style="height: 75%;">
-                                <img src="assets/images/projects/teamup.png" alt="Project" style="background-position: center; height: 100%; width: 100%; object-fit: fill;">
-                                <p class="details-btn popup-youtube">
-                                    TeamUp merupakan website yang digunakan untuk membangun sebuah tim untuk freelancing. 
-                                </p>
-                            </div>
-                            <div class="project-content">
-                                <h3>Website TeamUp</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- START SINGLE PORTFOLIO DESIGN AREA -->
-                    <div class="col-lg-4 col-md-6 item design marketing graphics">
-                        <div class="project-item style-two wow fadeInUp delay-0-4s" style="height: 280px;">
-                            <div class="project-image" style="height: 75%;">
-                                <img src="assets/images/projects/cvin.png" alt="Project" style="background-position: center; height: 100%; width: 100%; object-fit: fill;">
-                                <p class="details-btn popup-youtube">
-                                    CV-in merupakan website yang digunakan untuk membuat sebuah CV digital. 
-                                </p>
-                            </div>
-                            <div class="project-content">
-                                <h3>Website CV-in</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- START SINGLE PORTFOLIO DESIGN AREA -->
-                    <div class="col-lg-4 col-md-6 item design marketing graphics">
-                        <div class="project-item style-two wow fadeInUp delay-0-4s" style="height: 280px;">
-                            <div class="project-image" style="height: 75%;">
-                                <img src="assets/images/projects/pemira.png" alt="Project" style="background-position: center; height: 100%; width: 100%; object-fit: fill;">
-                                <p class="details-btn popup-youtube">
-                                    Pemira ITTP merupakan website yang digunakan sebagai media e-voting untuk HMIF, HMSI dan Koordinator DPM ITTP. 
-                                </p>
-                            </div>
-                            <div class="project-content">
-                                <h3>Website Pemira ITTP</h3>
-                            </div>
-                        </div>
-                    </div>
-                  
-          
+    <section id="portfolio" class="projects-area" style="margin-top: 20px;">
+        <div class="row"> 
+            <div class="col-xl-8 col-lg-10 mx-auto">
+                <div class="section-title text-center wow fadeInUp delay-0-2s">
+                    <h2>Works & Projects</h2>
+                    <p style="padding: 0px 0px;">Explore my web development projects, carefully built with dedication and expertise, each one showcasing the precision and care invested in every line of code.</p>
                 </div>
             </div>
         </div>
+
+        <div class="row flex-col gap-4 w-[90%] mx-auto">
+            <div class="flex flex-col md:flex-row rounded-lg p-4 mx-auto shadow-2xl rounded-lg h-full bg-gradient-to-l from-gray-900 to-black p-4 gap-4 items-center overflow-hidden shadow-xl">
+                
+                <div class="w-full lg:w-[50%] rounded-lg shadow-lg h-[250px] md:h-[450px] shadow-orange-500/15 overflow-hidden">
+                    <div class="swiper mySwiper h-full">
+                        <div class="swiper-wrapper h-full">
+                            <div class="swiper-slide flex items-center justify-center h-full">
+                                <img src="assets/images/projects/chatbot/elearning-chatbot.png"
+                                    class="w-full h-full object-fill cursor-pointer rounded-lg"
+                                    onclick="openImageModal(this.src)" />
+                            </div>
+                            <div class="swiper-slide flex items-center justify-center h-full">
+                                <img src="assets/images/projects/chatbot/attendance-chatbot.png"
+                                    class="w-full h-full object-fill cursor-pointer rounded-lg"
+                                    onclick="openImageModal(this.src)" />
+                            </div>
+                             <div class="swiper-slide flex items-center justify-center h-full">
+                                <img src="assets/images/projects/chatbot/sales-chatbot.jpeg"
+                                    class="w-full h-full object-fill cursor-pointer rounded-lg"
+                                    onclick="openImageModal(this.src)" />
+                            </div>
+                        </div>
+                        <div class="swiper-pagination !bottom-2"></div>
+                    </div>
+                </div>
+                
+                <!-- Bagian yang diperbaiki -->
+                <div class="w-full md:w-[50%] rounded-lg p-6 flex flex-column gap-6">
+                    
+                    <!-- Header Section -->
+                    <div class="space-y-4">
+                        <h2 class="project-title text-2xl font-bold text-white leading-tight">
+                            AI Chatbot Assistant
+                        </h2>
+                        
+                        <p class="text-gray-300 text-sm" style="margin-bottom: 0; line-height: 18px;">
+                            This AI chatbot helps users access information easily by simply typing their questions in a chat format, covering areas such as attendance data, e-learning, merchandising, and, SOP & sales.
+                        </p>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="space-y-2">
+                        <h2 class="text-white font-semibold text-sm">Key Features</h2>
+                        <ul class="space-y-1">
+                            <li class="list-item flex items-center gap-2 text-gray-300 text-sm">
+                                Chatbot Attendance
+                            </li>
+                            <li class="list-item flex items-center gap-2 text-gray-300 text-sm">
+                                Chatbot Merchandising
+                            </li>
+                             <li class="list-item flex items-center gap-2 text-gray-300 text-sm">
+                                Chatbot Helpdesk
+                            </li>
+                            <li class="list-item flex items-center gap-2 text-gray-300 text-sm">
+                                Chatbot Elearning
+                            </li>
+                            <li class="list-item flex items-center gap-2 text-gray-300 text-sm">
+                                Chatbot Sales
+                            </li>
+                             <li class="list-item flex items-center gap-2 text-gray-300 text-sm">
+                                Chatbot SOP
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Tech Stack -->
+                    <div class="space-y-2">
+                        <h2 class="text-white font-semibold text-sm">Technologies</h2>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-orange-500 text-white text-xs font-medium rounded-full">Angular Js</span>
+                            <span class="px-3 py-1 bg-orange-600 text-white text-xs font-medium rounded-full">Laravel</span>
+                            <span class="px-3 py-1 bg-orange-700 text-white text-xs font-medium rounded-full">Mysql</span>
+                            <span class="px-3 py-1 bg-orange-800 text-white text-xs font-medium rounded-full">Javascript</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="row flex-col gap-4 w-[90%] mx-auto">
+            <div class="flex flex-col md:flex-row rounded-lg p-4 mx-auto shadow-2xl rounded-lg h-full bg-gradient-to-l from-gray-900 to-black p-4 gap-4 items-center overflow-hidden shadow-xl">
+                
+                <div class="w-full lg:w-[50%] rounded-lg shadow-lg h-[250px] md:h-[450px] shadow-orange-500/15 overflow-hidden">
+                    <div class="swiper mySwiper h-full">
+                        <div class="swiper-wrapper h-full">
+                            <div class="swiper-slide flex items-center justify-center h-full">
+                                <img src="assets/images/projects/cazh/dashboard.png"
+                                    class="w-full h-full object-fill cursor-pointer rounded-lg"
+                                    onclick="openImageModal(this.src)" />
+                            </div>
+                            <div class="swiper-slide flex items-center justify-center h-full">
+                                <img src="assets/images/projects/cazh/form.png"
+                                    class="w-full h-full object-fill cursor-pointer rounded-lg"
+                                    onclick="openImageModal(this.src)" />
+                            </div>
+                        </div>
+                        <div class="swiper-pagination !bottom-2"></div>
+                    </div>
+                </div>
+                
+                <!-- Bagian yang diperbaiki -->
+                <div class="w-full md:w-[50%] rounded-lg p-6 flex flex-column gap-6">
+                    
+                    <!-- Header Section -->
+                    <div class="space-y-4">
+                        <h2 class="project-title text-2xl font-bold text-white leading-tight">
+                            CAZH Operational CRM System
+                        </h2>
+                        
+                        <p class="text-gray-300 text-sm" style="margin-bottom: 0; line-height: 18px;">
+                            A comprehensive dashboard application featuring advanced analytics, real-time data visualization, and an intuitive user interface—designed to enhance user experience, streamline customer and document workflows for the service division, and improve overall operational efficiency
+                        </p>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="space-y-2">
+                        <h2 class="text-white font-semibold text-sm">Key Features</h2>
+                        <ul class="space-y-1">
+                            <li class="list-item flex items-center gap-2 text-gray-300 text-sm">
+                                Real-time document form input with instant preview, allowing users to see changes as they type 
+                            </li>
+                            <li class="list-item flex items-center gap-2 text-gray-300 text-sm">
+                                Interactive dashboard with variety chart visualization
+                            </li>
+                            <li class="list-item flex items-center gap-2 text-gray-300 text-sm">
+                                The system ensures transparency by recording detailed logs of every user action
+                            </li>
+                            <li class="list-item flex items-center gap-2 text-gray-300 text-sm">
+                                The system uses clearly defined user roles to control access and responsibilities. Each role such as Admin, Service Manager, Sales, or Account Manager & ect has specific permissions to ensure security, accountability, and smooth workflow management
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Tech Stack -->
+                    <div class="space-y-2">
+                        <h2 class="text-white font-semibold text-sm">Technologies</h2>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-orange-500 text-white text-xs font-medium rounded-full">React</span>
+                            <span class="px-3 py-1 bg-orange-600 text-white text-xs font-medium rounded-full">Laravel</span>
+                            <span class="px-3 py-1 bg-orange-400 text-white text-xs font-medium rounded-full">Inertia Js</span>
+                            <span class="px-3 py-1 bg-orange-700 text-white text-xs font-medium rounded-full">Mysql</span>
+                            <span class="px-3 py-1 bg-orange-800 text-white text-xs font-medium rounded-full">Javascript</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="row flex-col gap-4 w-[90%] mx-auto">
+            <div class="flex flex-col md:flex-row rounded-lg p-4 mx-auto shadow-2xl rounded-lg h-full bg-gradient-to-l from-gray-900 to-black p-4 gap-4 items-center overflow-hidden shadow-xl">
+                
+                <div class="w-full lg:w-[50%] rounded-lg shadow-lg h-[250px] md:h-[450px] shadow-orange-500/15 overflow-hidden">
+                    <div class="swiper mySwiper h-full">
+                        <div class="swiper-wrapper h-full">
+                            <div class="swiper-slide flex items-center justify-center h-full">
+                                <img src="assets/images/projects/blanjaloka/landing.png"
+                                    class="w-full h-full object-fill cursor-pointer rounded-lg"
+                                    onclick="openImageModal(this.src)" />
+                            </div>
+                            <div class="swiper-slide flex items-center justify-center h-full">
+                                <img src="assets/images/projects/blanjaloka/investor-kegiatan.png"
+                                    class="w-full h-full object-fill cursor-pointer rounded-lg"
+                                    onclick="openImageModal(this.src)" />
+                            </div>
+                            <div class="swiper-slide flex items-center justify-center h-full">
+                                <img src="assets/images/projects/blanjaloka/umkm-kegiatan.png"
+                                    class="w-full h-full object-fill cursor-pointer rounded-lg"
+                                    onclick="openImageModal(this.src)" />
+                            </div>
+                            <div class="swiper-slide flex items-center justify-center h-full">
+                                <img src="assets/images/projects/blanjaloka/admin-kegiatan.png"
+                                    class="w-full h-full object-fill cursor-pointer rounded-lg"
+                                    onclick="openImageModal(this.src)" />
+                            </div>
+                        </div>
+                        <div class="swiper-pagination !bottom-2"></div>
+                    </div>
+                </div>
+                
+                <!-- Bagian yang diperbaiki -->
+                <div class="w-full md:w-[50%] rounded-lg p-6 flex flex-column gap-6">
+                    
+                    <!-- Header Section -->
+                    <div class="space-y-4">
+                        <h2 class="project-title text-2xl font-bold text-white leading-tight">
+                            Blanjaloka Small Enterprice Accelerator
+                        </h2>
+                        
+                        <p class="text-gray-300 text-sm" style="margin-bottom: 0; line-height: 18px;">
+                            Blanjaloka is a platform designed to empower MSMEs (Micro, Small, and Medium Enterprises) through digital learning resources, serving as a foundation to grow into scalable businesses and attract potential investors.
+                        </p>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="space-y-2">
+                        <h2 class="text-white font-semibold text-sm">Key Features</h2>
+                        <ul class="space-y-1">
+                            <li class="list-item flex items-center gap-2 text-gray-300 text-sm">
+                                Reactive and interactive design, built with a Single Page Application (SPA) approach to ensure a seamless, fast, and engaging user experience.
+                                </span>
+                            </li>
+                            <li class="list-item flex items-center gap-2 text-gray-300 text-sm">
+                                Enhanced security through multi-factor authentication using email, google and phone number verification.
+                            </li>
+                            <li class="list-item flex items-center gap-2 text-gray-300 text-sm">
+                                UMKM users can register for incubation events, complete detailed profiles, access e-learning, submit daily logbooks, and confirm appointments
+                            </li>
+                            <li class="list-item flex items-center gap-2 text-gray-300 text-sm">
+                                Admins can manage users, events, UMKM verification, e-learning, funding, appointments, and assessments, including receiving new UMKM registration notifications
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Tech Stack -->
+                    <div class="space-y-2">
+                        <h2 class="text-white font-semibold text-sm">Technologies</h2>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-orange-500 text-white text-xs font-medium rounded-full">Vue Js</span>
+                            <span class="px-3 py-1 bg-orange-600 text-white text-xs font-medium rounded-full">Laravel</span>
+                            <span class="px-3 py-1 bg-orange-400 text-white text-xs font-medium rounded-full">Inertia Js</span>
+                            <span class="px-3 py-1 bg-orange-700 text-white text-xs font-medium rounded-full">Mysql</span>
+                            <span class="px-3 py-1 bg-orange-800 text-white text-xs font-medium rounded-full">Javascript</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="row flex-col gap-4 w-[90%] mx-auto">
+            <div class="flex flex-col md:flex-row rounded-lg p-4 mx-auto shadow-2xl rounded-lg h-full bg-gradient-to-l from-gray-900 to-black p-4 gap-4 items-center overflow-hidden shadow-xl">
+                
+                <div class="w-full lg:w-[50%] rounded-lg shadow-lg h-[250px] md:h-[450px] shadow-orange-500/15 overflow-hidden">
+                    <div class="swiper mySwiper h-full">
+                        <div class="swiper-wrapper h-full">
+                            <div class="swiper-slide flex items-center justify-center h-full">
+                                <img src="assets/images/projects/teamup/landing.png"
+                                    class="w-full h-full object-fill cursor-pointer rounded-lg"
+                                    onclick="openImageModal(this.src)" />
+                            </div>
+                            <div class="swiper-slide flex items-center justify-center h-full">
+                                <img src="assets/images/projects/teamup/team-list.png"
+                                    class="w-full h-full object-fill cursor-pointer rounded-lg"
+                                    onclick="openImageModal(this.src)" />
+                            </div>
+                            <div class="swiper-slide flex items-center justify-center h-full">
+                                <img src="assets/images/projects/teamup/team-channel.png"
+                                    class="w-full h-full object-fill cursor-pointer rounded-lg"
+                                    onclick="openImageModal(this.src)" />
+                            </div>
+                            <div class="swiper-slide flex items-center justify-center h-full">
+                                <img src="assets/images/projects/teamup/job-list.png"
+                                    class="w-full h-full object-fill cursor-pointer rounded-lg"
+                                    onclick="openImageModal(this.src)" />
+                            </div>
+                        </div>
+                        <div class="swiper-pagination !bottom-2"></div>
+                    </div>
+                </div>
+                
+                <!-- Bagian yang diperbaiki -->
+                <div class="w-full md:w-[50%] rounded-lg p-6 flex flex-column gap-6">
+                    
+                    <!-- Header Section -->
+                    <div class="space-y-4">
+                        <h2 class="project-title text-2xl font-bold text-white leading-tight">
+                            Team Up
+                        </h2>
+                        
+                        <p class="text-gray-300 text-sm" style="margin-bottom: 0; line-height: 18px;">
+                            Team Up is a platform designed to help freelancers form teams to boost productivity, expand professional networks, and access job opportunities
+                        </p>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="space-y-2">
+                        <h2 class="text-white font-semibold text-sm">Key Features</h2>
+                        <ul class="space-y-1">
+                            <li class="list-item flex items-center gap-2 text-gray-300 text-sm">
+                                The platform allows users to search for team leaders to lead projects, find freelance teams to join, and recruit workers through a streamlined CV or resume submission process.
+                                </span>
+                            </li>
+                            <li class="list-item flex items-center gap-2 text-gray-300 text-sm">
+                                 Real-time chat groups or teams enabling seamless communication. It includes task management within teams and provides real-time notification alerts for applicant status updates.
+                            </li>
+                            <li class="list-item flex items-center gap-2 text-gray-300 text-sm">
+                                API job references in freelancer.com
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Tech Stack -->
+                    <div class="space-y-2">
+                        <h2 class="text-white font-semibold text-sm">Technologies</h2>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-orange-500 text-white text-xs font-medium rounded-full">Jquery</span>
+                            <span class="px-3 py-1 bg-orange-600 text-white text-xs font-medium rounded-full">Laravel</span>
+                            <span class="px-3 py-1 bg-orange-400 text-white text-xs font-medium rounded-full">Javascript</span>
+                            <span class="px-3 py-1 bg-orange-700 text-white text-xs font-medium rounded-full">Mysql</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="row flex-col gap-4 w-[90%] mx-auto">
+            <div class="flex flex-col md:flex-row rounded-lg p-4 mx-auto shadow-2xl rounded-lg h-full bg-gradient-to-l from-gray-900 to-black p-4 gap-4 items-center overflow-hidden shadow-xl">
+                
+                <div class="w-full lg:w-[50%] rounded-lg shadow-lg h-[250px] md:h-[450px] shadow-orange-500/15 overflow-hidden">
+                    <div class="swiper mySwiper h-full">
+                        <div class="swiper-wrapper h-full">
+                            <div class="swiper-slide flex items-center justify-center h-full">
+                                <img src="assets/images/projects/pemira/landing.png"
+                                    class="w-full h-full object-fill cursor-pointer rounded-lg"
+                                    onclick="openImageModal(this.src)" />
+                            </div>
+                            <div class="swiper-slide flex items-center justify-center h-full">
+                                <img src="assets/images/projects/pemira/vote.png"
+                                    class="w-full h-full object-fill cursor-pointer rounded-lg"
+                                    onclick="openImageModal(this.src)" />
+                            </div>
+                            <div class="swiper-slide flex items-center justify-center h-full">
+                                <img src="assets/images/projects/pemira/quick-count.png"
+                                    class="w-full h-full object-fill cursor-pointer rounded-lg"
+                                    onclick="openImageModal(this.src)" />
+                            </div>
+                        </div>
+                        <div class="swiper-pagination !bottom-2"></div>
+                    </div>
+                </div>
+                
+                <!-- Bagian yang diperbaiki -->
+                <div class="w-full md:w-[50%] rounded-lg p-6 flex flex-column gap-6">
+                    
+                    <!-- Header Section -->
+                    <div class="space-y-4">
+                        <h2 class="project-title text-2xl font-bold text-white leading-tight">
+                            Pemira
+                        </h2>
+                        
+                        <p class="text-gray-300 text-sm" style="margin-bottom: 0; line-height: 18px;">
+                            Pemira is a dedicated platform facilitating the election process for Chairperson and Vice Chairperson candidates of HMIF, HMSI, and the campus DPM Coordinator, ensuring a transparent and efficient voting experience
+                        </p>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="space-y-2">
+                        <h2 class="text-white font-semibold text-sm">Key Features</h2>
+                        <ul class="space-y-1">
+                            <li class="list-item flex items-center gap-2 text-gray-300 text-sm">
+                                Candidate management, voter management, and vote management to ensure a smooth and organized election process.
+                                </span>
+                            </li>
+                            <li class="list-item flex items-center gap-2 text-gray-300 text-sm">
+                                 Real-time vote statistics are displayed using Chart, enabling quick and visual election result tracking.
+                            </li>
+                            <li class="list-item flex items-center gap-2 text-gray-300 text-sm">
+                                Efficient user data import supported through Fast Excel integration.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Tech Stack -->
+                    <div class="space-y-2">
+                        <h2 class="text-white font-semibold text-sm">Technologies</h2>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-orange-500 text-white text-xs font-medium rounded-full">Jquery</span>
+                            <span class="px-3 py-1 bg-orange-600 text-white text-xs font-medium rounded-full">Laravel</span>
+                            <span class="px-3 py-1 bg-orange-400 text-white text-xs font-medium rounded-full">Javascript</span>
+                            <span class="px-3 py-1 bg-orange-700 text-white text-xs font-medium rounded-full">Mysql</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="row flex-col gap-4 w-[90%] mx-auto">
+            <div class="flex flex-col md:flex-row rounded-lg p-4 mx-auto shadow-2xl rounded-lg h-full bg-gradient-to-l from-gray-900 to-black p-4 gap-4 items-center overflow-hidden shadow-xl">
+                
+                <div class="w-full lg:w-[50%] rounded-lg shadow-lg h-[250px] md:h-[450px] shadow-orange-500/15 overflow-hidden">
+                    <div class="swiper mySwiper h-full">
+                        <div class="swiper-wrapper h-full">
+                            <div class="swiper-slide flex items-center justify-center h-full">
+                                <img src="assets/images/projects/cvin/landing.png"
+                                    class="w-full h-full object-fill cursor-pointer rounded-lg"
+                                    onclick="openImageModal(this.src)" />
+                            </div>
+                            <div class="swiper-slide flex items-center justify-center h-full">
+                                <img src="assets/images/projects/cvin/cv-builder.png"
+                                    class="w-full h-full object-fill cursor-pointer rounded-lg"
+                                    onclick="openImageModal(this.src)" />
+                            </div>
+                            <div class="swiper-slide flex items-center justify-center h-full">
+                                <img src="assets/images/projects/cvin/payment.PNG"
+                                    class="w-full h-full object-fill cursor-pointer rounded-lg"
+                                    onclick="openImageModal(this.src)" />
+                            </div>
+                        </div>
+                        <div class="swiper-pagination !bottom-2"></div>
+                    </div>
+                </div>
+                
+                <!-- Bagian yang diperbaiki -->
+                <div class="w-full md:w-[50%] rounded-lg p-6 flex flex-column gap-6">
+                    
+                    <!-- Header Section -->
+                    <div class="space-y-4">
+                        <h2 class="project-title text-2xl font-bold text-white leading-tight">
+                            CV-in
+                        </h2>
+                        
+                        <p class="text-gray-300 text-sm" style="margin-bottom: 0; line-height: 18px;">
+                            CV-in is a platform for creating digital CVs in a practical and simple way, making it easy for users to build professional resumes quickly
+                        </p>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="space-y-2">
+                        <h2 class="text-white font-semibold text-sm">Key Features</h2>
+                        <ul class="space-y-1">
+                            <li class="list-item flex items-center gap-2 text-gray-300 text-sm">
+                                Offers a variety of free templates, allowing users to choose designs that best suit their professional style.
+                            </li>
+                            <li class="list-item flex items-center gap-2 text-gray-300 text-sm">
+                                 Supports real-time input and live preview, allowing users to see changes instantly as they build their CV
+                            </li>
+                            <li class="list-item flex items-center gap-2 text-gray-300 text-sm">
+                                Integrated with Tripay payment gateway for secure and seamless transactions.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Tech Stack -->
+                    <div class="space-y-2">
+                        <h2 class="text-white font-semibold text-sm">Technologies</h2>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-orange-500 text-white text-xs font-medium rounded-full">Laravel Livewire</span>
+                            <span class="px-3 py-1 bg-orange-700 text-white text-xs font-medium rounded-full">Mysql</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+        
+       </div>
+
     </section>
+
     <!-- // END PORTFOLIO DESIGN AREA -->
     <!-- START CALL TO ACTION DESIGN AREA -->
     <section class="call-to-action-area">
@@ -324,7 +772,7 @@
                     <div class="col-lg-6">
                         <div class="copyright-text extra-copyright">
                             <p>
-                                Build with ❤️ Deva Apriana
+                                Build with ❤️, Deva Apriana
                             </p>
                         </div>
                     </div>
@@ -339,6 +787,14 @@
         <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>
+    </div>
+
+    <!-- Modal Fullscreen -->
+    <div id="imageModal"
+        class="fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center hidden">
+    <img id="modalImage" src="" class="max-w-full max-h-full rounded-lg shadow-lg" />
+    <button onclick="closeImageModal()"
+            class="absolute top-4 right-4 text-white text-3xl font-bold">&times;</button>
     </div>
 
     <script>
@@ -373,6 +829,47 @@
     <script src="assets/js/wow.min.js"></script>
     <!-- SCRIPT JS-->
     <script src="assets/js/script.js"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 </body>
+
+<script>
+
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      effect: "fade",
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+
+     var swiper2 = new Swiper(".mySwiper2", {
+      spaceBetween: 30,
+      effect: "fade"
+    });
+    
+
+    function openImageModal(src) {
+    document.querySelector('.main-header').style.display = 'none';
+    document.getElementById('modalImage').src = src;
+    document.getElementById('imageModal').classList.remove('hidden');
+  }
+
+  function closeImageModal() {
+    document.querySelector('.main-header').style.display = 'block';
+    document.getElementById('imageModal').classList.add('hidden');
+  }
+
+  // Optional: close modal when clicking outside image
+  document.getElementById('imageModal').addEventListener('click', function (e) {
+    if (e.target.id === 'imageModal') closeImageModal();
+  });
+</script>
 
 </html>
